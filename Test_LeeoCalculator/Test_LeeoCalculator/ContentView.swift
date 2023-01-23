@@ -1,10 +1,9 @@
 //
 //  ContentView.swift
-//  SwiftfulMapApp
+//  Test_LeeoCalculator
 //
-//  Created by TEDDY on 1/21/23.
+//  Created by TEDDY on 1/22/23.
 //
-//  Playlist Swiftful Thinking - SwiftUI Map App
 
 import SwiftUI
 

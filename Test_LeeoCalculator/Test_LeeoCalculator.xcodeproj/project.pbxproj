@@ -7,32 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03AAEC09297DA94400A01BA4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAEC08297DA94400A01BA4 /* LocationsView.swift */; };
-		03AAEC0B297DB10200A01BA4 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03AAEC0A297DB10200A01BA4 /* LocationsViewModel.swift */; };
-		03F4E713297BE84E00C153B2 /* SwiftfulMapAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4E712297BE84E00C153B2 /* SwiftfulMapAppApp.swift */; };
-		03F4E715297BE84E00C153B2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4E714297BE84E00C153B2 /* ContentView.swift */; };
-		03F4E71A297BE84F00C153B2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F4E719297BE84F00C153B2 /* Preview Assets.xcassets */; };
-		03F4E721297BE8C000C153B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03F4E720297BE8BF00C153B2 /* Assets.xcassets */; };
-		03F4E727297BE8D900C153B2 /* LocationsDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4E726297BE8D900C153B2 /* LocationsDataService.swift */; };
-		03F4E729297BE8F000C153B2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F4E728297BE8F000C153B2 /* Location.swift */; };
-		03F6D4A7297E565B00A2E6A2 /* LocationsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F6D4A6297E565B00A2E6A2 /* LocationsListView.swift */; };
+		03FA9140297D58B3006A3C5F /* Test_LeeoCalculatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA913F297D58B3006A3C5F /* Test_LeeoCalculatorApp.swift */; };
+		03FA9142297D58B3006A3C5F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FA9141297D58B3006A3C5F /* ContentView.swift */; };
+		03FA9144297D58B4006A3C5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03FA9143297D58B4006A3C5F /* Assets.xcassets */; };
+		03FA9147297D58B4006A3C5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03FA9146297D58B4006A3C5F /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		03AAEC08297DA94400A01BA4 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
-		03AAEC0A297DB10200A01BA4 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
-		03F4E70F297BE84E00C153B2 /* SwiftfulMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftfulMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		03F4E712297BE84E00C153B2 /* SwiftfulMapAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftfulMapAppApp.swift; sourceTree = "<group>"; };
-		03F4E714297BE84E00C153B2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		03F4E719297BE84F00C153B2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		03F4E720297BE8BF00C153B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		03F4E726297BE8D900C153B2 /* LocationsDataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsDataService.swift; sourceTree = "<group>"; };
-		03F4E728297BE8F000C153B2 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		03F6D4A6297E565B00A2E6A2 /* LocationsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsListView.swift; sourceTree = "<group>"; };
+		03FA913C297D58B3006A3C5F /* Test_LeeoCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test_LeeoCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03FA913F297D58B3006A3C5F /* Test_LeeoCalculatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test_LeeoCalculatorApp.swift; sourceTree = "<group>"; };
+		03FA9141297D58B3006A3C5F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		03FA9143297D58B4006A3C5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		03FA9146297D58B4006A3C5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		03F4E70C297BE84E00C153B2 /* Frameworks */ = {
+		03FA9139297D58B3006A3C5F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,114 +32,77 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03F4E706297BE84E00C153B2 = {
+		03FA9133297D58B3006A3C5F = {
 			isa = PBXGroup;
 			children = (
-				03F4E711297BE84E00C153B2 /* SwiftfulMapApp */,
-				03F4E710297BE84E00C153B2 /* Products */,
+				03FA913E297D58B3006A3C5F /* Test_LeeoCalculator */,
+				03FA913D297D58B3006A3C5F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		03F4E710297BE84E00C153B2 /* Products */ = {
+		03FA913D297D58B3006A3C5F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				03F4E70F297BE84E00C153B2 /* SwiftfulMapApp.app */,
+				03FA913C297D58B3006A3C5F /* Test_LeeoCalculator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		03F4E711297BE84E00C153B2 /* SwiftfulMapApp */ = {
+		03FA913E297D58B3006A3C5F /* Test_LeeoCalculator */ = {
 			isa = PBXGroup;
 			children = (
-				03F4E712297BE84E00C153B2 /* SwiftfulMapAppApp.swift */,
-				03F4E714297BE84E00C153B2 /* ContentView.swift */,
-				03F4E725297BE8CB00C153B2 /* DataServices */,
-				03F4E724297BE8C800C153B2 /* Views */,
-				03F4E723297BE8C600C153B2 /* ViewModels */,
-				03F4E722297BE8C300C153B2 /* Models */,
-				03F4E720297BE8BF00C153B2 /* Assets.xcassets */,
-				03F4E718297BE84F00C153B2 /* Preview Content */,
+				03FA913F297D58B3006A3C5F /* Test_LeeoCalculatorApp.swift */,
+				03FA9141297D58B3006A3C5F /* ContentView.swift */,
+				03FA9143297D58B4006A3C5F /* Assets.xcassets */,
+				03FA9145297D58B4006A3C5F /* Preview Content */,
 			);
-			path = SwiftfulMapApp;
+			path = Test_LeeoCalculator;
 			sourceTree = "<group>";
 		};
-		03F4E718297BE84F00C153B2 /* Preview Content */ = {
+		03FA9145297D58B4006A3C5F /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				03F4E719297BE84F00C153B2 /* Preview Assets.xcassets */,
+				03FA9146297D58B4006A3C5F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		03F4E722297BE8C300C153B2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				03F4E728297BE8F000C153B2 /* Location.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		03F4E723297BE8C600C153B2 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				03AAEC0A297DB10200A01BA4 /* LocationsViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		03F4E724297BE8C800C153B2 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				03AAEC08297DA94400A01BA4 /* LocationsView.swift */,
-				03F6D4A6297E565B00A2E6A2 /* LocationsListView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		03F4E725297BE8CB00C153B2 /* DataServices */ = {
-			isa = PBXGroup;
-			children = (
-				03F4E726297BE8D900C153B2 /* LocationsDataService.swift */,
-			);
-			path = DataServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03F4E70E297BE84E00C153B2 /* SwiftfulMapApp */ = {
+		03FA913B297D58B3006A3C5F /* Test_LeeoCalculator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03F4E71D297BE84F00C153B2 /* Build configuration list for PBXNativeTarget "SwiftfulMapApp" */;
+			buildConfigurationList = 03FA914A297D58B4006A3C5F /* Build configuration list for PBXNativeTarget "Test_LeeoCalculator" */;
 			buildPhases = (
-				03F4E70B297BE84E00C153B2 /* Sources */,
-				03F4E70C297BE84E00C153B2 /* Frameworks */,
-				03F4E70D297BE84E00C153B2 /* Resources */,
+				03FA9138297D58B3006A3C5F /* Sources */,
+				03FA9139297D58B3006A3C5F /* Frameworks */,
+				03FA913A297D58B3006A3C5F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftfulMapApp;
-			productName = SwiftfulMapApp;
-			productReference = 03F4E70F297BE84E00C153B2 /* SwiftfulMapApp.app */;
+			name = Test_LeeoCalculator;
+			productName = Test_LeeoCalculator;
+			productReference = 03FA913C297D58B3006A3C5F /* Test_LeeoCalculator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		03F4E707297BE84E00C153B2 /* Project object */ = {
+		03FA9134297D58B3006A3C5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					03F4E70E297BE84E00C153B2 = {
+					03FA913B297D58B3006A3C5F = {
 						CreatedOnToolsVersion = 14.2;
 					};
 				};
 			};
-			buildConfigurationList = 03F4E70A297BE84E00C153B2 /* Build configuration list for PBXProject "SwiftfulMapApp" */;
+			buildConfigurationList = 03FA9137297D58B3006A3C5F /* Build configuration list for PBXProject "Test_LeeoCalculator" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -157,47 +110,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 03F4E706297BE84E00C153B2;
-			productRefGroup = 03F4E710297BE84E00C153B2 /* Products */;
+			mainGroup = 03FA9133297D58B3006A3C5F;
+			productRefGroup = 03FA913D297D58B3006A3C5F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03F4E70E297BE84E00C153B2 /* SwiftfulMapApp */,
+				03FA913B297D58B3006A3C5F /* Test_LeeoCalculator */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		03F4E70D297BE84E00C153B2 /* Resources */ = {
+		03FA913A297D58B3006A3C5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F4E721297BE8C000C153B2 /* Assets.xcassets in Resources */,
-				03F4E71A297BE84F00C153B2 /* Preview Assets.xcassets in Resources */,
+				03FA9147297D58B4006A3C5F /* Preview Assets.xcassets in Resources */,
+				03FA9144297D58B4006A3C5F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03F4E70B297BE84E00C153B2 /* Sources */ = {
+		03FA9138297D58B3006A3C5F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03F4E715297BE84E00C153B2 /* ContentView.swift in Sources */,
-				03F6D4A7297E565B00A2E6A2 /* LocationsListView.swift in Sources */,
-				03AAEC0B297DB10200A01BA4 /* LocationsViewModel.swift in Sources */,
-				03F4E713297BE84E00C153B2 /* SwiftfulMapAppApp.swift in Sources */,
-				03AAEC09297DA94400A01BA4 /* LocationsView.swift in Sources */,
-				03F4E729297BE8F000C153B2 /* Location.swift in Sources */,
-				03F4E727297BE8D900C153B2 /* LocationsDataService.swift in Sources */,
+				03FA9142297D58B3006A3C5F /* ContentView.swift in Sources */,
+				03FA9140297D58B3006A3C5F /* Test_LeeoCalculatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		03F4E71B297BE84F00C153B2 /* Debug */ = {
+		03FA9148297D58B4006A3C5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,7 +205,7 @@
 			};
 			name = Debug;
 		};
-		03F4E71C297BE84F00C153B2 /* Release */ = {
+		03FA9149297D58B4006A3C5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -311,14 +259,14 @@
 			};
 			name = Release;
 		};
-		03F4E71E297BE84F00C153B2 /* Debug */ = {
+		03FA914B297D58B4006A3C5F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulMapApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Test_LeeoCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = F2K4SQRVM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -332,7 +280,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teddy.SwiftfulMapApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Test-LeeoCalculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -340,14 +288,14 @@
 			};
 			name = Debug;
 		};
-		03F4E71F297BE84F00C153B2 /* Release */ = {
+		03FA914C297D58B4006A3C5F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftfulMapApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Test_LeeoCalculator/Preview Content\"";
 				DEVELOPMENT_TEAM = F2K4SQRVM6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -361,7 +309,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.teddy.SwiftfulMapApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teddy.Test-LeeoCalculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -372,25 +320,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03F4E70A297BE84E00C153B2 /* Build configuration list for PBXProject "SwiftfulMapApp" */ = {
+		03FA9137297D58B3006A3C5F /* Build configuration list for PBXProject "Test_LeeoCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03F4E71B297BE84F00C153B2 /* Debug */,
-				03F4E71C297BE84F00C153B2 /* Release */,
+				03FA9148297D58B4006A3C5F /* Debug */,
+				03FA9149297D58B4006A3C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03F4E71D297BE84F00C153B2 /* Build configuration list for PBXNativeTarget "SwiftfulMapApp" */ = {
+		03FA914A297D58B4006A3C5F /* Build configuration list for PBXNativeTarget "Test_LeeoCalculator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03F4E71E297BE84F00C153B2 /* Debug */,
-				03F4E71F297BE84F00C153B2 /* Release */,
+				03FA914B297D58B4006A3C5F /* Debug */,
+				03FA914C297D58B4006A3C5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 03F4E707297BE84E00C153B2 /* Project object */;
+	rootObject = 03FA9134297D58B3006A3C5F /* Project object */;
 }
