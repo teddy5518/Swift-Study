@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-// struct is value type
+// struct is a value type
 struct ContentView: View {
   // boolean waiting for the changes
   @State private var isNight = false
