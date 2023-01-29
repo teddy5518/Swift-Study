@@ -15,38 +15,14 @@ struct LocationsView: View {
   
   var body: some View {
     ZStack {
-      // Command + Shift + O -> Search: ForEach -> Provides official document
-      // annotiationItems allows to pin on the map
-      Map(coordinateRegion: $vm.mapRegion,
-          annotationItems: vm.locations,
-          annotationContent: { location in
-        // Customize annotaion
-        MapAnnotation(coordinate: location.coordinates) {
-         Text("Hello")
-        }
-      })
-      .ignoresSafeArea()
+      mapLayer
+        .ignoresSafeArea()
       
       VStack(spacing: 0) {
         header
           .padding()
-        
         Spacer()
-        
-        ZStack {
-          ForEach(vm.locations) { location in
-            // To draw one preview at a time
-            if vm.mapLocation == location {
-              LocationsPreviewView(location: location)
-                .shadow(color: Color.black.opacity(0.3), radius: 20)
-                .padding()
-              // Transition between changes
-                .transition(.asymmetric(
-                  insertion: .move(edge: .trailing),
-                  removal: .move(edge: .leading)))
-            }
-          }
-        }
+        locationsPreviewStack
       }
     }
   }
@@ -97,4 +73,42 @@ extension LocationsView {
     .shadow(color: .black.opacity(0.3), radius: 20, x: 10, y: 15)
   }
   
+  private var mapLayer: some View {
+    // Command + Shift + O -> Search: ForEach -> Provides official document
+    // annotiationItems allows to pin on the map
+    Map(coordinateRegion: $vm.mapRegion,
+        annotationItems: vm.locations,
+        annotationContent: { location in
+      // Customize annotaion
+      MapAnnotation(coordinate: location.coordinates) {
+        LocationMapAnnotationView()
+        // Making current location pin to be bigger than other pins
+          .scaleEffect(vm.mapLocation == location ? 1 : 0.7)
+          .shadow(radius: 10)
+        // To change current location by clicking map
+          .onTapGesture {
+            vm.showNextLocation(location: location)
+          }
+      }
+    })
+  }
+  
+  private var locationsPreviewStack: some View {
+    ZStack {
+      ForEach(vm.locations) { location in
+        // To draw one preview at a time
+        if vm.mapLocation == location {
+          LocationsPreviewView(location: location)
+            .shadow(color: Color.black.opacity(0.3), radius: 20)
+            .padding()
+          // Transition between changes
+            .transition(.asymmetric(
+              insertion: .move(edge: .trailing),
+              removal: .move(edge: .leading)))
+        }
+      }
+    }
+  }
+  
 }
+
