@@ -15,8 +15,17 @@ struct LocationsView: View {
   
   var body: some View {
     ZStack {
-      Map(coordinateRegion: $vm.mapRegion)
-        .ignoresSafeArea()
+      // Command + Shift + O -> Search: ForEach -> Provides official document
+      // annotiationItems allows to pin on the map
+      Map(coordinateRegion: $vm.mapRegion,
+          annotationItems: vm.locations,
+          annotationContent: { location in
+        // Customize annotaion
+        MapAnnotation(coordinate: location.coordinates) {
+         Text("Hello")
+        }
+      })
+      .ignoresSafeArea()
       
       VStack(spacing: 0) {
         header
