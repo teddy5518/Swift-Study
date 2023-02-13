@@ -1,5 +1,4 @@
 # 🐻 Tutorial   
-Recording learnings
 
 |No.|Title|Instructor|Note|
 |-|-|-|-|
