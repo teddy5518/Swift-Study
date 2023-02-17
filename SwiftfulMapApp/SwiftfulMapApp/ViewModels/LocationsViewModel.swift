@@ -31,6 +31,10 @@ class LocationsViewModel: ObservableObject {
   // Show list of locations
   @Published var showLocationsList: Bool = false
   
+  // Show location detail via sheet
+  // Needs to be optional
+  @Published var sheetLocation: Location? = nil
+  
   init() {
     let locations = LocationsDataService.locations
     self.locations = locations

@@ -107,10 +107,10 @@
 			isa = PBXGroup;
 			children = (
 				03AAEC08297DA94400A01BA4 /* LocationsView.swift */,
-				032972F4298BA72C001EA253 /* LocationDetailView.swift */,
 				03BC53412986F9A50037C0F3 /* LocationMapAnnotationView.swift */,
 				03F6D4A6297E565B00A2E6A2 /* LocationsListView.swift */,
 				031C9327297EF29D001C041C /* LocationsPreviewView.swift */,
+				032972F4298BA72C001EA253 /* LocationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

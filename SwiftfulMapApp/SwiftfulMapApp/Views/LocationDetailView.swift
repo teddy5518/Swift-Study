@@ -20,11 +20,12 @@ struct LocationDetailView: View {
           .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
         
         VStack(alignment: .leading, spacing: 16) {
-         titleSection
+          titleSection
           Divider()
           descriptionSection
           Divider()
-
+          mapLayer
+          
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
@@ -32,6 +33,8 @@ struct LocationDetailView: View {
     }
     // To push image to the top
     .ignoresSafeArea()
+    .background(.ultraThinMaterial)
+    .overlay(backButton, alignment: .topLeading)
   }
 }
 
@@ -52,7 +55,7 @@ extension LocationDetailView {
         Image($0)
           .resizable()
           .scaledToFill()
-          // To remove weird loading delay between swipes
+        // To remove weird loading delay between swipes
           .frame(width: UIScreen.main.bounds.width)
           .clipped()
       }
@@ -60,7 +63,7 @@ extension LocationDetailView {
     .frame(height: 500)
     .tabViewStyle(PageTabViewStyle())
   }
- 
+  
   private var titleSection: some View {
     VStack(alignment: .leading, spacing: 8) {
       Text(location.name)
@@ -89,12 +92,36 @@ extension LocationDetailView {
   }
   
   private var mapLayer: some View {
-    Map(coordinateRegion: .constant(MKCoordinateRegion(center: location.coordinates, span: vm.mapSpan)), annotationItems: [location]) { location in
+    Map(coordinateRegion: .constant(MKCoordinateRegion(
+      center: location.coordinates,
+      span: MKCoordinateSpan(latitudeDelta: 0.01,
+                             longitudeDelta: 0.01))),
+        annotationItems: [location]) { location in
       MapAnnotation(coordinate: location.coordinates) {
         LocationMapAnnotationView()
           .shadow(radius: 10)
       }
     }
+    // Disable hit gesture
+    .allowsHitTesting(false)
+    // 1 to 1 ratio for height and width
+    .aspectRatio(1, contentMode: .fit)
+    .cornerRadius(30)
   }
   
+  private var backButton: some View {
+    Button {
+      vm.sheetLocation = nil
+    } label: {
+      Image(systemName: "xmark")
+        .font(.headline)
+        .padding(16)
+        .foregroundColor(.primary)
+        .background(.thickMaterial)
+        .cornerRadius(10)
+        .shadow(radius: 4)
+        .padding()
+    }
+    
+  }
 }
