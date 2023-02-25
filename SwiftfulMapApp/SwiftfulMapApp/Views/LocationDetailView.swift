@@ -56,7 +56,8 @@ extension LocationDetailView {
           .resizable()
           .scaledToFill()
         // To remove weird loading delay between swipes
-          .frame(width: UIScreen.main.bounds.width)
+        // Setting frame for devices
+          .frame(width: UIDevice.current.userInterfaceIdiom == .pad ? nil : UIScreen.main.bounds.width)
           .clipped()
       }
     }
@@ -71,6 +72,7 @@ extension LocationDetailView {
         .fontWeight(.semibold)
       Text(location.cityName)
         .font(.title3)
+      // Primary and secondary adopts to dark mode automatically.
         .foregroundColor(.secondary)
     }
   }

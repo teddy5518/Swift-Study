@@ -12,6 +12,8 @@ struct LocationsView: View {
   
   // View has a reference to the LocationsViewModel
   @EnvironmentObject private var vm: LocationsViewModel
+  // Declaring max width for IPad
+  let maxWidthForIpad: CGFloat = 700
   
   var body: some View {
     ZStack {
@@ -21,6 +23,8 @@ struct LocationsView: View {
       VStack(spacing: 0) {
         header
           .padding()
+          .frame(maxWidth: maxWidthForIpad)
+        
         Spacer()
         locationsPreviewStack
       }
@@ -104,6 +108,9 @@ extension LocationsView {
           LocationsPreviewView(location: location)
             .shadow(color: Color.black.opacity(0.3), radius: 20)
             .padding()
+            .frame(maxWidth: maxWidthForIpad)
+            // Animation moves from edge of Max width for Ipad, thus another frame is required.
+            .frame(maxWidth: .infinity)
           // Transition between changes
             .transition(.asymmetric(
               insertion: .move(edge: .trailing),
