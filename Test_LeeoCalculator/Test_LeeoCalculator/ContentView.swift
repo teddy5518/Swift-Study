@@ -9,12 +9,12 @@
 import SwiftUI
 
 struct ContentView: View {
-  
+  // Used enum to distinguish types of buttons.
   enum ButtonType {
     case first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, zero
     case dot, equal, plus, minus, multiply, divide
     case percent, opposite, clear
-    
+    // To display buttons on the app.
     var buttonDisplayName: String {
       switch self {
       case .first:
@@ -57,7 +57,7 @@ struct ContentView: View {
         return "C"
       }
     }
-    
+    // BackgroundColor of the buttons.
     var backgroundColor: Color {
       switch self {
       case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot:
@@ -68,7 +68,7 @@ struct ContentView: View {
         return Color.gray
       }
     }
-    
+    // ForegroundColor of the displayed buttons.
     var foregroundColor: Color {
       switch self {
       case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot, .equal, .plus, .minus, .multiply, .divide:
@@ -80,13 +80,13 @@ struct ContentView: View {
   }
   
   @State private var totalNumber: String = "0"
-  
+  // Actual data of the buttons.
   private let buttonData: [[ButtonType]] = [
     [.clear, .opposite, .percent, .divide],
     [.seventh, .eighth, .ninth, .multiply],
     [.fourth, .fifth, .sixth, .minus],
     [.first, .second, .third, .plus],
-    [.zero, .zero, .dot, .equal],
+    [.zero, .dot, .equal],
   ]
   
   var body: some View {
@@ -108,13 +108,31 @@ struct ContentView: View {
             ForEach(line, id: \.self) { item in
               Button {
                 if totalNumber == "0" {
-                  totalNumber = "7"
+                  
+                  if item == .clear {
+                    totalNumber = "0"
+                    // To prevent inputing signs before actual numbers.
+                  } else if item == .plus ||
+                              item == .minus ||
+                              item == .multiply ||
+                              item == .divide {
+                    totalNumber = "Error"
+                  }
+                  else {
+                    totalNumber = item.buttonDisplayName
+                  }
                 } else {
-                  totalNumber += "7"
+                  if item == .clear {
+                    totalNumber = "0"
+                  } else {
+                    totalNumber += item.buttonDisplayName
+                  }
                 }
               } label: {
                 Text(item.buttonDisplayName)
-                  .frame(width: 80, height: 80)
+                // To distinguish other buttons from zero button.
+                  .frame(width: item == .some(.zero) ? 160 : 80,
+                         height: 80)
                   .background(item.backgroundColor)
                   .cornerRadius(40)
                   .foregroundColor(item.foregroundColor)
