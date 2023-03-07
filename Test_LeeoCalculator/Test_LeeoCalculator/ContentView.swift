@@ -8,78 +8,83 @@
 
 import SwiftUI
 
-struct ContentView: View {
-  // Used enum to distinguish types of buttons.
-  enum ButtonType {
-    case first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, zero
-    case dot, equal, plus, minus, multiply, divide
-    case percent, opposite, clear
-    // To display buttons on the app.
-    var buttonDisplayName: String {
-      switch self {
-      case .first:
-        return "1"
-      case .second:
-        return "2"
-      case .third:
-        return "3"
-      case .fourth:
-        return "4"
-      case .fifth:
-        return "5"
-      case .sixth:
-        return "6"
-      case .seventh:
-        return "7"
-      case .eighth:
-        return "8"
-      case .ninth:
-        return "9"
-      case .zero:
-        return "0"
-      case .dot:
-        return "."
-      case .equal:
-        return "="
-      case .plus:
-        return "+"
-      case .minus:
-        return "-"
-      case .multiply:
-        return "X"
-      case .divide:
-        return "/"
-      case .percent:
-        return "%"
-      case .opposite:
-        return "+/-"
-      case .clear:
-        return "C"
-      }
-    }
-    // BackgroundColor of the buttons.
-    var backgroundColor: Color {
-      switch self {
-      case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot:
-        return Color("NumberButton")
-      case .equal, .plus, .minus, .multiply, .divide:
-        return Color.orange
-      case .percent, .opposite, .clear:
-        return Color.gray
-      }
-    }
-    // ForegroundColor of the displayed buttons.
-    var foregroundColor: Color {
-      switch self {
-      case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot, .equal, .plus, .minus, .multiply, .divide:
-        return Color.white
-      case .percent, .opposite, .clear:
-        return Color.black
-      }
+// Used enum to distinguish types of buttons.
+enum ButtonType {
+  case first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, zero
+  case dot, equal, plus, minus, multiply, divide
+  case percent, opposite, clear
+ 
+  // To display buttons on the app.
+  var buttonDisplayName: String {
+    switch self {
+    case .first:
+      return "1"
+    case .second:
+      return "2"
+    case .third:
+      return "3"
+    case .fourth:
+      return "4"
+    case .fifth:
+      return "5"
+    case .sixth:
+      return "6"
+    case .seventh:
+      return "7"
+    case .eighth:
+      return "8"
+    case .ninth:
+      return "9"
+    case .zero:
+      return "0"
+    case .dot:
+      return "."
+    case .equal:
+      return "="
+    case .plus:
+      return "+"
+    case .minus:
+      return "-"
+    case .multiply:
+      return "X"
+    case .divide:
+      return "/"
+    case .percent:
+      return "%"
+    case .opposite:
+      return "+/-"
+    case .clear:
+      return "C"
     }
   }
   
+  // BackgroundColor of the buttons.
+  var backgroundColor: Color {
+    switch self {
+    case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot:
+      return Color("NumberButton")
+    case .equal, .plus, .minus, .multiply, .divide:
+      return Color.orange
+    case .percent, .opposite, .clear:
+      return Color.gray
+    }
+  }
+  // ForegroundColor of the displayed buttons.
+  var foregroundColor: Color {
+    switch self {
+    case .first, .second, .third, .fourth, .fifth, .sixth, .seventh, .eighth, .ninth, .zero, .dot, .equal, .plus, .minus, .multiply, .divide:
+      return Color.white
+    case .percent, .opposite, .clear:
+      return Color.black
+    }
+  }
+}
+
+struct ContentView: View {
   @State private var totalNumber: String = "0"
+  @State var tempNumber: Int = 0
+  @State var operatorType: ButtonType = .clear
+  
   // Actual data of the buttons.
   private let buttonData: [[ButtonType]] = [
     [.clear, .opposite, .percent, .divide],
@@ -124,15 +129,41 @@ struct ContentView: View {
                 } else {
                   if item == .clear {
                     totalNumber = "0"
-                  } else {
+                  } else if item == .plus {
+                    // Store numbers
+                    tempNumber = Int(totalNumber) ?? 0
+                    // Add numbers
+                    operatorType = .plus
+                    // Store numbers that are calculated
+                    totalNumber = "0"
+                  } else if item == .multiply {
+                    tempNumber = Int(totalNumber) ?? 0
+                    operatorType = .multiply
+                    totalNumber = "0"
+                  } else if item == .minus {
+                    tempNumber = Int(totalNumber) ?? 0
+                    operatorType = .minus
+                    totalNumber = "0"
+                  } else if item == .equal {
+                    if operatorType == .plus {
+                      totalNumber = String((Int(totalNumber) ?? 0) + tempNumber)
+                    } else if operatorType == .multiply {
+                      totalNumber = String((Int(totalNumber) ?? 0) * tempNumber)
+                    } else if operatorType == .minus {
+                      // As the numbers are substracting, tempNumber has to come first.
+                      totalNumber = String(tempNumber - (Int(totalNumber) ?? 0))
+                    }
+                  }
+                  else {
                     totalNumber += item.buttonDisplayName
                   }
                 }
               } label: {
                 Text(item.buttonDisplayName)
+                  .bold()
                 // To distinguish other buttons from zero button.
-                  .frame(width: item == .some(.zero) ? 160 : 80,
-                         height: 80)
+                  .frame(width: calculateButtonWidth(button: item),
+                         height: calculateButtonHeight(button: item))
                   .background(item.backgroundColor)
                   .cornerRadius(40)
                   .foregroundColor(item.foregroundColor)
@@ -144,6 +175,20 @@ struct ContentView: View {
       }
     }
   }
+  
+  private func calculateButtonWidth(button buttonType: ButtonType) -> CGFloat {
+    switch buttonType {
+    case .zero:
+      return (UIScreen.main.bounds.width - 5 * 10) / 4 * 2
+    default:
+      // 4 Buttons and 5 blank spaces between buttons
+      return ((UIScreen.main.bounds.width - 5 * 10) / 4)
+    }
+  }
+
+  private func calculateButtonHeight(button: ButtonType) -> CGFloat {
+      return (UIScreen.main.bounds.width - 5 * 10) / 4
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
