@@ -13,7 +13,7 @@ enum ButtonType {
   case first, second, third, fourth, fifth, sixth, seventh, eighth, ninth, zero
   case dot, equal, plus, minus, multiply, divide
   case percent, opposite, clear
- 
+  
   // To display buttons on the app.
   var buttonDisplayName: String {
     switch self {
@@ -84,6 +84,7 @@ struct ContentView: View {
   @State private var totalNumber: String = "0"
   @State var tempNumber: Int = 0
   @State var operatorType: ButtonType = .clear
+  @State var isNotEditing: Bool = true
   
   // Actual data of the buttons.
   private let buttonData: [[ButtonType]] = [
@@ -112,11 +113,18 @@ struct ContentView: View {
           HStack {
             ForEach(line, id: \.self) { item in
               Button {
-                if totalNumber == "0" {
-                  
+                
+                //                  if touchCount % 2 == 0 {
+                //                    // Even number turns on
+                //                  } else {
+                //                      // Odd number turns off
+                //                  }
+                
+                if isNotEditing {
                   if item == .clear {
                     totalNumber = "0"
                     // To prevent inputing signs before actual numbers.
+                    isNotEditing = true
                   } else if item == .plus ||
                               item == .minus ||
                               item == .multiply ||
@@ -126,25 +134,29 @@ struct ContentView: View {
                   else {
                     totalNumber = item.buttonDisplayName
                   }
+                  isNotEditing = false // Already recieved inputs
+                  
                 } else {
+                  
                   if item == .clear {
                     totalNumber = "0"
+                    isNotEditing = true // Recieving inputs
                   } else if item == .plus {
                     // Store numbers
                     tempNumber = Int(totalNumber) ?? 0
                     // Add numbers
                     operatorType = .plus
-                    // Store numbers that are calculated
-                    totalNumber = "0"
+                    isNotEditing = true
                   } else if item == .multiply {
                     tempNumber = Int(totalNumber) ?? 0
                     operatorType = .multiply
-                    totalNumber = "0"
+                    isNotEditing = true
                   } else if item == .minus {
                     tempNumber = Int(totalNumber) ?? 0
                     operatorType = .minus
-                    totalNumber = "0"
+                    isNotEditing = true
                   } else if item == .equal {
+                    
                     if operatorType == .plus {
                       totalNumber = String((Int(totalNumber) ?? 0) + tempNumber)
                     } else if operatorType == .multiply {
@@ -185,10 +197,10 @@ struct ContentView: View {
       return ((UIScreen.main.bounds.width - 5 * 10) / 4)
     }
   }
-
+  
   private func calculateButtonHeight(button: ButtonType) -> CGFloat {
-      return (UIScreen.main.bounds.width - 5 * 10) / 4
-    }
+    return (UIScreen.main.bounds.width - 5 * 10) / 4
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {
